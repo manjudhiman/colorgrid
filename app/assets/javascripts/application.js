@@ -17,10 +17,3 @@
 //= require jquery.minicolors
 //= require tiles
 //= require_tree .
-
-$(document).ready(function() {
-    $(".colors").minicolors({
-        position: 'top right',
-        inline: true
-    });
-});
