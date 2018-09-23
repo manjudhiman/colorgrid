@@ -43,13 +43,13 @@ function updateTileColors(){
 }
 
 //Reload Tiles
-//function reloadTile(){
-//    if ($(".selected").size() == 0){
-//        $.ajax({
-//            type: "get",
-//            url: "/home/reload"
-//        });
-//    }
-//}
+function reloadTile(){
+    if ($(".selected").size() == 0){
+        $.ajax({
+            type: "get",
+            url: "/home/reload"
+        });
+    }
+}
 
 window.setInterval(reloadTile,8000);

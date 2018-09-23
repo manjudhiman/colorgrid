@@ -38,7 +38,25 @@ table.leaderboard tr > td{
 .leaderboard{
     width: 600px;
     border: 2px solid;
+    padding-top: 10px;
 }
 table.leaderboard tr > td{
     border: 2px solid;
+}
+
+.color {
+    padding-left: 850px;
+}
+.button {
+    padding-left: 850px;
+    padding-top: 20px;
+}
+
+#block {
+    height: 900px;
+    width: 1000px
+}
+#tiles {
+    width: 750px;
+    height: 100px;
 }
