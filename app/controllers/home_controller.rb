@@ -2,7 +2,6 @@ class HomeController < ApplicationController
   before_action :set_username
 
   def index
-
   end
 
   def update
@@ -19,7 +18,6 @@ class HomeController < ApplicationController
 
   def dashboard
      @users = User.joins(:colorpalettes).select("users.*, count(colorpalettes.id) as count").group("users.id").order("count DESC")
-    @users
   end
 
   protected
