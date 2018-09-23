@@ -1,6 +1,6 @@
 module ApplicationHelper
   def get_tile_details(row,col)
-    Colorpalette.find_color_code_and_user_stamp(row,col)
+    Colorpalette.find_color_code(row,col)
   end
 
   def generate_tile(row,col)

@@ -1,4 +1,4 @@
-//load color picker
+//Load/Initialize color picker
 $(document).ready(function(){
     $(".colors").minicolors({
         position: 'top right',
@@ -6,19 +6,19 @@ $(document).ready(function(){
     });
 })
 
-//tiles on select add/remove class
+//Toggles the class on select/selecting tile.
 function toggleClass(e){
     if ($(e).hasClass("selected")){
         $(e).removeClass("selected");
-        alert("Tile unselected");
+        alert("Tile unselected!");
     }
     else{
         $(e).addClass("selected");
-        alert("Tile selected");
+        alert("Tile selected!");
     }
 }
 
-//Update colors on selecting of Tiles
+//Update colors on selection of Tiles
 function updateTileColors(){
     if ($(".selected").size() == 0){
         alert("Please select a square!")
@@ -28,7 +28,7 @@ function updateTileColors(){
         selectedTiles = []
         $(".selected").map(function() {
             $(this).css("background-color",selectedColor);
-            selectedTiles.push($( this ).attr("id"))
+            selectedTiles.push($(this).attr("id"))
         });
         $.ajax({
             type: "POST",

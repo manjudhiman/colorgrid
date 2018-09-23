@@ -45,18 +45,10 @@ table.leaderboard tr > td{
 }
 
 .color {
-    padding-left: 850px;
-}
-.button {
-    padding-left: 850px;
+    padding-left: 50px;
     padding-top: 20px;
 }
-
-#block {
-    height: 900px;
-    width: 1000px
-}
-#tiles {
-    width: 750px;
-    height: 100px;
+.button {
+    padding-left: 150px;
+    padding-top: 20px;
 }
