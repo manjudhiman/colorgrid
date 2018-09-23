@@ -1,8 +1,8 @@
 module HomeHelper
 
-  def generate_tile(row,col)
-    tile_info = get_tile_details(row,col)
-    raw("<div onclick='toggleClass(this);' class='content'
+  def generate_tile(row, col)
+    tile_info = get_tile_details(row, col)
+      raw("<div onclick='toggleClass(this);' class='content'
          id='tile-#{row}_#{col}' #{style_attributes(tile_info)}></div>")
   end
 
