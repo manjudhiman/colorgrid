@@ -4,6 +4,9 @@ class HomeController < ApplicationController
   def index
   end
 
+  # Internal: Set the user if not present else create the user based on ip address
+  #
+  # Returns user object
   def update
     params[:tiles].split(",").each do |tile|
       position = tile.split("-")[1].split("_")
@@ -16,11 +19,17 @@ class HomeController < ApplicationController
     respond_to :js
   end
 
+  # Selects the user and palettes id counts
+  #
+  # Returns user object
   def dashboard
      @users = User.joins(:colorpalettes).select("users.*, count(colorpalettes.id) as count").group("users.id").order("count DESC")
   end
 
-  protected
+  private
+    # Internal: Set the user if not present else create the user based on ip address
+    #
+    # Returns user object
     def set_username
       user = User.where(ipaddress: request.remote_ip).last
       if user.present?

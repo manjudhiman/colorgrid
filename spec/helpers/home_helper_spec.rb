@@ -18,10 +18,11 @@ RSpec.describe HomeHelper, type: :helper do
     subject { get_tile_details(row, col) }
     let(:row) { 3 }
     let(:col) { 17 }
-    let(:result) { [
+    let(:result) {
+      [
         "#b36161",
         "User 10-1537680539 23-09-2018 14:37:57"
-    ]
+      ]
     }
 
     before do
@@ -34,7 +35,6 @@ RSpec.describe HomeHelper, type: :helper do
       end
     end
   end
-
 
   describe '#style_attributes' do
     subject { style_attributes(tile_info) }
