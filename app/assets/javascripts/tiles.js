@@ -10,11 +10,9 @@ $(document).ready(function(){
 function toggleClass(e){
     if ($(e).hasClass("selected")){
         $(e).removeClass("selected");
-        alert("Tile unselected!");
     }
     else{
         $(e).addClass("selected");
-        alert("Tile selected!");
     }
 }
 
