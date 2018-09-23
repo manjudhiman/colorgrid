@@ -14,7 +14,6 @@ RSpec.describe HomeHelper, type: :helper do
     end
   end
 
-  #Failing
   describe '#get_tile_details' do
     subject { get_tile_details(row, col) }
     let(:row) { 3 }
@@ -24,9 +23,9 @@ RSpec.describe HomeHelper, type: :helper do
         "User 10-1537680539 23-09-2018 14:37:57"
     ]
     }
-    # let(:find_color_code) { double }
+
     before do
-      allow(subject).to receive(:find_color_code).with(row, col).and_return(result)
+      allow(Colorpalette).to receive(:find_color_code).with(row, col).and_return(result)
     end
 
     context 'row and col are passed' do
