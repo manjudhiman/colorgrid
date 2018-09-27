@@ -13,21 +13,21 @@ RSpec.describe Colorpalette, type: :model do
     end
 
     context 'When ipaddress is not present' do
-      it "should have many colorpalettes" do
+      it "colorpalettes is not valid" do
         subject.column = nil
         expect(subject).to_not be_valid
       end
     end
 
     context 'When ipaddress is not present' do
-      it "should have many colorpalettes" do
+      it "colorpalettes is not valid" do
         subject.code = nil
         expect(subject).to_not be_valid
       end
     end
 
     context 'When ipaddress is not present' do
-      it "should have many colorpalettes" do
+      it "colorpalettes is not valid" do
         subject.user_id = nil
         expect(subject).to_not be_valid
       end
