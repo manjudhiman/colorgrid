@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   before_action :set_username
 
   def index
+    @palletes = Colorpalette.includes(:user).all
   end
 
   # Internal: Set the user if not present else create the user based on ip address
@@ -10,12 +11,19 @@ class HomeController < ApplicationController
   def update
     params[:tiles].split(",").each do |tile|
       position = tile.split("-")[1].split("_")
-      @user.colorpalettes.create(code: params[:color_code], row: position[0],column: position[1])
+
+      pallete = @user.colorpalettes.find_by_row_and_column(position[0],position[1])
+      if pallete
+        pallete.update_attributes(code: params[:color_code], row: position[0],column: position[1])
+      else
+        @user.colorpalettes.create(code: params[:color_code], row: position[0],column: position[1])
+      end
     end
     respond_to :js
   end
 
   def reload
+    @palletes = Colorpalette.includes(:user).all
     respond_to :js
   end
 

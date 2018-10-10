@@ -42,7 +42,7 @@ function updateTileColors(){
 
 //Reload Tiles
 function reloadTile(){
-    if ($(".selected").size() == 0){
+    if (window.location.pathname == "/" && $(".selected").size() == 0){
         $.ajax({
             type: "get",
             url: "/home/reload"

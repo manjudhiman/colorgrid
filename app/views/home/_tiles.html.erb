@@ -2,7 +2,7 @@
   <%for row in 1..20 do %>
       <tr>
         <% for col in 1..20 do%>
-            <td><%= generate_tile(row,col)%></td>
+            <td><%= generate_tile(@palletes, row, col)%></td>
         <%end%>
       </tr>
   <%end%>

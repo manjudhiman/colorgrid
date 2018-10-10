@@ -1,14 +1,23 @@
 module HomeHelper
 
   # Generates the tiles
+  # palettes: palettes containing array of colorpalettes.
   # row: (Integer) x-axis
   # column: (Integer) y-axis
   #
   # Returns the div.
-  def generate_tile(row, column)
-    tile_info = get_tile_details(row, column)
-      raw("<div onclick='toggleClass(this);' class='content'
-         id='tile-#{row}_#{column}' #{style_attributes(tile_info)}></div>")
+  def generate_tile(palettes, row, column)
+    row_palettes= palettes.group_by(&:row)
+    tile_info = []
+    row_palette = row_palettes[row.to_i]
+    if row_palette
+     column_palette = row_palette.group_by(&:column)[column.to_i]
+     column_palette = column_palette.last if column_palette
+     tile_info = [column_palette.code,"#{column_palette.user.username} #{column_palette.find_time_stamp}"] if column_palette
+    end
+
+    raw("<div onclick='toggleClass(this);' class='content'
+       id='tile-#{row}_#{column}' #{style_attributes(tile_info)}></div>")
   end
 
   private

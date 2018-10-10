@@ -2,4 +2,4 @@ $(".colors").minicolors({
   position: 'top right',
   inline: true
 })
-$('#tiles').html("<%= escape_javascript render(:partial => 'home/tiles') %>");
+$('#tiles').html("<%= escape_javascript render(:partial => 'home/tiles',:locals => { :palletes => @palletes}) %>");
