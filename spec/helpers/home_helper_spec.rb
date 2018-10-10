@@ -2,12 +2,23 @@ require 'rails_helper'
 
 RSpec.describe HomeHelper, type: :helper do
   describe '#generate_tile' do
-    subject { generate_tile(row, col) }
+    subject { generate_tile(palette, row, col) }
+    let(:palette) {[palette1, palette2] }
+    let(:palette1) {
+
+          double(id: 1,row:1,column: 1,code: "#iloveyou2")
+
+    }
+    let(:palette2) {
+
+          double(id: 2,row:1,column:2,code: "#iloveyou2")
+
+    }
     let(:row) { 2 }
     let(:col) { 3 }
 
     context 'row and column are passed' do
-      let(:result) { "<div onclick='toggleClass(this);' class='content'\n         id='tile-2_3' style='background-color: ' title=''></div>" }
+      let(:result) { "<div onclick='toggleClass(this);' class='content'\n       id='tile-2_3' style='background-color: ' title=''></div>" }
       it 'returns the div' do
         expect(subject).to eq(result)
       end
@@ -20,8 +31,8 @@ RSpec.describe HomeHelper, type: :helper do
     let(:col) { 17 }
     let(:result) {
       [
-        "#b36161",
-        "User 10-1537680539 23-09-2018 14:37:57"
+          "#b36161",
+          "User 10-1537680539 23-09-2018 14:37:57"
       ]
     }
 

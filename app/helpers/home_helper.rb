@@ -1,3 +1,4 @@
+require 'pry'
 module HomeHelper
 
   # Generates the tiles
@@ -7,6 +8,10 @@ module HomeHelper
   #
   # Returns the div.
   def generate_tile(palettes, row, column)
+    puts "######"
+    puts palettes.inspect
+    puts "==="
+    # binding.pry
     row_palettes= palettes.group_by(&:row)
     tile_info = []
     row_palette = row_palettes[row.to_i]
