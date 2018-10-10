@@ -5,14 +5,10 @@ RSpec.describe HomeHelper, type: :helper do
     subject { generate_tile(palette, row, col) }
     let(:palette) {[palette1, palette2] }
     let(:palette1) {
-
-          double(id: 1,row:1,column: 1,code: "#iloveyou2")
-
+      double(id: 1, row:1, column: 1, code: "#53fa20")
     }
     let(:palette2) {
-
-          double(id: 2,row:1,column:2,code: "#iloveyou2")
-
+      double(id: 2, row:1, column: 2, code: "#53fa20")
     }
     let(:row) { 2 }
     let(:col) { 3 }
