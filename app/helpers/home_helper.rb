@@ -13,8 +13,10 @@ module HomeHelper
     row_palette = row_palettes[row.to_i]
     if row_palette
      column_palette = row_palette.group_by(&:column)[column.to_i]
-     column_palette = column_palette.last if column_palette
-     tile_info = [column_palette.code,"#{column_palette.user.username} #{column_palette.find_time_stamp}"] if column_palette
+     if column_palette
+       column_palette = column_palette.last
+       tile_info = [column_palette.code,"#{column_palette.user.username} #{column_palette.find_time_stamp}"]
+     end
     end
 
     raw("<div onclick='toggleClass(this);' class='content'
