@@ -5,9 +5,6 @@ class HomeController < ApplicationController
     @palettes = Colorpalette.includes(:user).all
   end
 
-  # Internal: Set the user if not present else create the user based on ip address
-  #
-  # Returns user object
   def update
     params[:tiles].split(",").each do |tile|
       position = tile.split("-")[1].split("_")
