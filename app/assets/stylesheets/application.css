@@ -1,0 +1,54 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require jquery.minicolors
+ *= require_self
+ */
+tr > td{
+    width: 30px;
+}
+.content{
+    width: 20px;
+    height:20px;
+    border: 2px solid;
+    padding: unset;
+}
+.selected{
+    border: 4px solid;
+}
+.leaderboard{
+    width: 600px;
+    border: 2px solid;
+}
+
+table.leaderboard tr > td{
+    border: 2px solid;
+}
+
+.leaderboard{
+    width: 600px;
+    border: 2px solid;
+    padding-top: 10px;
+}
+table.leaderboard tr > td{
+    border: 2px solid;
+}
+
+.color {
+    padding-left: 50px;
+    padding-top: 20px;
+}
+.button {
+    padding-left: 150px;
+    padding-top: 20px;
+}
